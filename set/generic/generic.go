@@ -6,6 +6,14 @@ import (
 	"strconv"
 )
 
+func MapKeys[K comparable, V any](m map[K]V) []K {
+	r := make([]K, 0, len(m))
+	for k := range m {
+		r = append(r, k)
+	}
+	return r
+}
+
 const (
 	numberInt   int   = 0
 	numberInt8  int8  = 0
@@ -72,5 +80,6 @@ func main() {
 	fmt.Printf("%T\n", s.Values())
 
 	f := Foo[Set[int]]{Foo: s}
-	fmt.Printf("%v\n", f)
+	fmt.Println(f)
+	fmt.Printf("%T\n", f)
 }
