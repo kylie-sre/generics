@@ -2,7 +2,7 @@ name: "Test Tags"
 on:
   push:
     tags:
-      - v.*
+      - v*
 jobs:
   build:
     runs-on:
